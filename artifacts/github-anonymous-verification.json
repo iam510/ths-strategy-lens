@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-31T02:54:41.478Z",
+  "authentication": "Anonymous requests without Cookie or Authorization header",
+  "records": [
+    {
+      "id": "repository",
+      "status": 200,
+      "visibility": "public",
+      "url": "https://github.com/iam510/ths-strategy-lens"
+    },
+    {
+      "id": "readme",
+      "status": 200,
+      "reviewerInstructions": true
+    }
+  ]
+}

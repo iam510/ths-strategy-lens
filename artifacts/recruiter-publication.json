@@ -1,0 +1,24 @@
+{
+  "time": "2026-10-31T03:02:28.880669+00:00",
+  "website": "https://strategy-lens-ths-510.green-trout-2026.chatgpt.site",
+  "siteAccessMode": "public",
+  "realServicesRequireReviewerCode": true,
+  "environmentRevision": 2,
+  "accessRevision": 2,
+  "repository": "https://github.com/iam510/ths-strategy-lens",
+  "repositoryVisibility": "public",
+  "anonymousWebsiteVerified": true,
+  "anonymousRepositoryReadAndCloneVerified": true,
+  "reviewerBrowser": {
+    "reviewCodeAccepted": true,
+    "realModelParsed": true,
+    "realScreenCounts": {
+      "pass": 6,
+      "fail": 6,
+      "unknown": 0
+    },
+    "snapshotId": "live-c39df8b6-7e4f-4e1f-8d85-ab81259e4c32"
+  },
+  "reviewCodeDelivery": "Private recruiter submission note; absent from public source and source ZIP",
+  "upstreamCredentials": "Server-side secrets only; absent from source and browser"
+}

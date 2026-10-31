@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-31T02:55:45.473508+00:00",
+  "repository": "https://github.com/iam510/ths-strategy-lens",
+  "anonymousClone": true,
+  "cloneAuthentication": "Git global/system config and credential helpers disabled; no Authorization header",
+  "commitsScanned": 2,
+  "secretValuesAbsentAcrossReachableHistory": true,
+  "privateFilesAbsent": true,
+  "testedApplicationFilesMatch": [
+    "app/workbench.tsx",
+    "app/api/intent/route.ts",
+    "app/api/screen/route.ts",
+    "app/api/review-access/route.ts",
+    "src/server/review-access.ts",
+    "src/server/fuyao.ts",
+    "src/server/ai.ts",
+    "package.json",
+    "package-lock.json"
+  ],
+  "head": "19ab86aa62d81544a3bbf64f1badb31e32486c18"
+}
