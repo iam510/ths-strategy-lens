@@ -1,0 +1,83 @@
+{
+  "time": "2026-10-30T16:01:12.933Z",
+  "origin": "http://127.0.0.1:5186",
+  "promptVersion": "intent-v1.2",
+  "model": "MiniMax-M3.1-Flash",
+  "records": [
+    {
+      "id": "explicit",
+      "status": 200,
+      "elapsedMs": 1518,
+      "passed": true,
+      "model": "MiniMax-M3.1-Flash",
+      "conditionCount": 3,
+      "questionCount": 0,
+      "unsupported": []
+    },
+    {
+      "id": "clarification",
+      "status": 200,
+      "elapsedMs": 5249,
+      "passed": true,
+      "model": "MiniMax-M3.1-Flash",
+      "conditionCount": 3,
+      "questionCount": 3,
+      "unsupported": []
+    },
+    {
+      "id": "conflict",
+      "status": 200,
+      "elapsedMs": 1947,
+      "passed": true,
+      "model": "MiniMax-M3.1-Flash",
+      "conditionCount": 2,
+      "questionCount": 0,
+      "unsupported": []
+    },
+    {
+      "id": "unsupported",
+      "status": 200,
+      "elapsedMs": 2053,
+      "passed": true,
+      "model": "MiniMax-M3.1-Flash",
+      "conditionCount": 1,
+      "questionCount": 0,
+      "unsupported": [
+        "ROE大于15%：当前指标目录不支持ROE筛选。",
+        "筛选全A股：产品仅支持从界面所选股票池筛选，不支持全市场筛选。"
+      ]
+    },
+    {
+      "id": "instruction-rejected",
+      "status": 422,
+      "elapsedMs": 14,
+      "passed": true
+    },
+    {
+      "id": "boundary",
+      "status": 422,
+      "elapsedMs": 11,
+      "passed": true
+    },
+    {
+      "id": "conflict-blocked-before-data",
+      "status": 422,
+      "passed": true
+    },
+    {
+      "id": "model-to-live-screen",
+      "status": 200,
+      "elapsedMs": 20451,
+      "passed": true,
+      "snapshotId": "live-d0549ba3-146f-43a8-b16b-3b2309966934",
+      "asOf": "2026-10-30",
+      "evaluated": 12,
+      "counts": {
+        "pass": 6,
+        "fail": 6,
+        "unknown": 0
+      }
+    }
+  ],
+  "limitation": "Local runtime only. Finite smoke scenarios do not establish exhaustive model reliability. Raw responses stay in excluded private artifacts."
+}

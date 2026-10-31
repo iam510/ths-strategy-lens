@@ -1,0 +1,69 @@
+{
+  "verifiedAt": "2026-10-30T15:17:26.647Z",
+  "mode": "live",
+  "snapshotId": "live-926b582f-967c-4b0e-a013-1e27765863af",
+  "asOf": "2026-10-30",
+  "universe": "000300.SH",
+  "universeTotal": 300,
+  "evaluatedStocks": 12,
+  "counts": {
+    "pass": 6,
+    "fail": 6,
+    "unknown": 0
+  },
+  "validMetricCalculationsChecked": 57,
+  "nonValidMetricCount": 3,
+  "independentRecomputation": "passed",
+  "conditionComparison": [
+    {
+      "peLimit": 10,
+      "counts": {
+        "pass": 0,
+        "fail": 12,
+        "unknown": 0
+      }
+    },
+    {
+      "peLimit": 15,
+      "counts": {
+        "pass": 3,
+        "fail": 9,
+        "unknown": 0
+      }
+    },
+    {
+      "peLimit": 20,
+      "counts": {
+        "pass": 5,
+        "fail": 7,
+        "unknown": 0
+      }
+    },
+    {
+      "peLimit": 25,
+      "counts": {
+        "pass": 6,
+        "fail": 6,
+        "unknown": 0
+      }
+    },
+    {
+      "peLimit": 30,
+      "counts": {
+        "pass": 6,
+        "fail": 6,
+        "unknown": 0
+      }
+    },
+    {
+      "peLimit": 35,
+      "counts": {
+        "pass": 6,
+        "fail": 6,
+        "unknown": 0
+      }
+    }
+  ],
+  "rawFinancialData": "Retained only under artifacts/private; excluded from source and submission archive",
+  "limitation": "Local API with authenticated data. Model and hosted data credentials not configured."
+}

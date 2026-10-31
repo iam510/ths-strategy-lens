@@ -1,0 +1,9 @@
+{
+  "time": "2026-10-30T16:34:00.376Z",
+  "status": 502,
+  "elapsedMs": 19903,
+  "error": {
+    "code": "DATA_NETWORK",
+    "message": "扶摇请求超时或网络不可达；本次未产生正常结论。"
+  }
+}

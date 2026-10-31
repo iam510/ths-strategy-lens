@@ -1,0 +1,49 @@
+npm warn EBADENGINE Unsupported engine {
+npm warn EBADENGINE   package: 'eslint-visitor-keys@5.0.1',
+npm warn EBADENGINE   required: { node: '^20.19.0 || ^22.13.0 || >=24' },
+npm warn EBADENGINE   current: { node: 'v23.10.0', npm: '10.9.2' }
+npm warn EBADENGINE }
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+added 736 packages in 12s
+
+> strategy-lens@0.1.0 typecheck
+> tsc --noEmit
+
+
+> strategy-lens@0.1.0 test
+> vitest run --config vitest.config.ts
+
+
+ RUN  v3.2.7 ./work/standalone-check/web
+
+ ✓ tests/strategy.test.ts (27 tests) 8ms
+ ✓ tests/provider.test.ts (11 tests) 25ms
+ ✓ tests/ai-api.test.ts (12 tests) 25ms
+
+ Test Files  3 passed (3)
+      Tests  50 passed (50)
+   Start at  22:53:34
+   Duration  360ms (transform 109ms, setup 0ms, collect 254ms, tests 59ms, environment 0ms, prepare 165ms)
+
+
+> strategy-lens@0.1.0 typecheck
+> tsc --noEmit
+
+
+> strategy-lens@0.1.0 test
+> vitest run --config vitest.config.ts
+
+
+ RUN  v3.2.7 /Users/a510/Desktop/code/同花顺笔试题/01_自然语言智能选股与策略解释器/work/standalone-check/web
+
+ ✓ tests/strategy.test.ts (27 tests) 9ms
+ ✓ tests/provider.test.ts (11 tests) 24ms
+ ✓ tests/ai-api.test.ts (12 tests) 19ms
+
+ Test Files  3 passed (3)
+      Tests  50 passed (50)
+   Start at  22:56:47
+   Duration  339ms (transform 119ms, setup 0ms, collect 255ms, tests 52ms, environment 0ms, prepare 155ms)
+

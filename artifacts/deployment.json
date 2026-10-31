@@ -1,0 +1,15 @@
+{
+  "id": "appgdep_6ae4c9e1fcf881918492ea62ff602f53",
+  "project_id": "appgprj_6ae4a47fe6f88191b450fc1ceb9a4262",
+  "title": "选股条件工作台 · Strategy Lens",
+  "version_id": "appgprj_6ae4a47fe6f88191b450fc1ceb9a4262~appgver_7b6d979c5d8081918fa0a8c0d6c043ad",
+  "type": "publish",
+  "status": "succeeded",
+  "url": "https://strategy-lens-ths-510.green-trout-2026.chatgpt.site",
+  "has_mcp": false,
+  "screenshot_asset_pointer": null,
+  "provider_deployment_id": "site---6ae4a47fe6f88191b450fc1ceb9a4262",
+  "failure_message": null,
+  "env_set_revision": 1,
+  "updated_at": "2026-10-30T16:46:50.843375+00:00"
+}

@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-30T14:36:15.994Z",
+  "probe": "Non-secret placeholder values passed from dev launcher into Worker server bindings",
+  "initial": {
+    "dataConfigured": false,
+    "aiConfigured": false
+  },
+  "afterFix": {
+    "dataConfigured": true,
+    "aiConfigured": true
+  },
+  "limitation": "Configuration propagation only; no authenticated data/model calls made. Probe process stopped and placeholders removed from runtime."
+}

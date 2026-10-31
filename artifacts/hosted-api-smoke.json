@@ -1,0 +1,32 @@
+{
+  "time": "2026-10-30T16:19:52.101Z",
+  "deploymentId": "appgdep_6ae4c34e29148191bcee8f963d94490e",
+  "versionId": "appgprj_6ae4a47fe6f88191b450fc1ceb9a4262~appgver_b47c8c04f2708191908b1dc22c771e8a",
+  "origin": "https://strategy-lens-ths-510.green-trout-2026.chatgpt.site",
+  "authentication": "Sites platform service credential via stdin; no visitor identity or app consent",
+  "records": [
+    {
+      "name": "Hosted HTML with platform service authentication",
+      "httpStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "Hosted config",
+      "httpStatus": 200,
+      "dataConfigured": true,
+      "aiConfigured": true,
+      "passed": true
+    },
+    {
+      "name": "Hosted explicit demo screening",
+      "httpStatus": 200,
+      "counts": {
+        "pass": 2,
+        "fail": 4,
+        "unknown": 2
+      },
+      "passed": true
+    }
+  ],
+  "limitation": "HTTP checks only. Browser visitor gate requires manual ChatGPT login; real financial and model services remain unverified."
+}

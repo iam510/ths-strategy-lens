@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "name": "验收策略 · PE≤35",
+  "universe": "000300.SH",
+  "conditions": [
+    {
+      "id": "revenue",
+      "metric": "revenue_yoy",
+      "op": "gt",
+      "value": 5
+    },
+    {
+      "id": "pe",
+      "metric": "pe_static",
+      "op": "lte",
+      "value": 35
+    },
+    {
+      "id": "vol",
+      "metric": "volatility_60",
+      "op": "lte",
+      "value": 35
+    }
+  ]
+}

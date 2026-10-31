@@ -1,0 +1,34 @@
+import assert from "node:assert/strict";
+import {mkdirSync,writeFileSync} from "node:fs";
+const origin="https://strategy-lens-ths-510.green-trout-2026.chatgpt.site";
+if(!process.argv.includes("--live"))throw new Error("Pass --live to verify reviewer-authorized external calls.");
+if(process.stdin.isTTY)process.stdin.setRawMode(true);
+process.stdin.setEncoding("utf8");process.stdin.resume();
+console.log("Ready for reviewer code on stdin (input hidden).");
+const code=await new Promise(resolve=>{let text="";process.stdin.on("data",data=>{text+=data;if(/[\r\n]/.test(text)){process.stdin.pause();if(process.stdin.isTTY)process.stdin.setRawMode(false);resolve(text.trim());}});});
+assert.ok(typeof code==="string"&&code.length>0);
+const records=[],raw=[];
+async function call(path,body,reviewCode){
+ const start=Date.now();const response=await fetch(origin+path,{method:body?"POST":"GET",headers:{...(body?{"Content-Type":"application/json"}:{}),...(reviewCode?{"X-Review-Access":reviewCode}:{})},body:body?JSON.stringify(body):undefined,redirect:"error",signal:AbortSignal.timeout(210000)});
+ const result={status:response.status,elapsedMs:Date.now()-start,body:await response.json()};raw.push({path,...result});return result;
+}
+const page=await fetch(origin+"/",{redirect:"error",signal:AbortSignal.timeout(25000)});const html=await page.text();assert.equal(page.status,200);assert.ok(html.includes("FROM INTENT TO EVIDENCE"));
+records.push({id:"anonymous-page",status:page.status,passed:true});
+const config=await call("/api/config");assert.equal(config.status,200);assert.equal(config.body.reviewAccessRequired,true);assert.equal(config.body.reviewAccessGranted,false);assert.ok(!JSON.stringify(config.body).includes(code));
+records.push({id:"anonymous-config-locked",status:config.status,passed:true});
+const strategy={version:1,name:"Recruiter access verification",universe:"000300.SH",conditions:[{id:"r",metric:"revenue_yoy",op:"gt",value:5},{id:"p",metric:"pe_static",op:"lte",value:30},{id:"v",metric:"volatility_60",op:"lte",value:35}]};
+const blockedIntent=await call("/api/intent",{text:"营收同比大于5%"});assert.equal(blockedIntent.status,401);
+const blockedScreen=await call("/api/screen",{strategy,mode:"live"});assert.equal(blockedScreen.status,401);
+records.push({id:"anonymous-paid-routes-blocked",intentStatus:401,screenStatus:401,passed:true});
+const demo=await call("/api/screen",{strategy,mode:"demo"});assert.equal(demo.status,200);assert.equal(demo.body.snapshot.mode,"demo");records.push({id:"anonymous-explicit-demo",status:200,passed:true});
+const wrong=await call("/api/review-access",{code:"incorrect-reviewer-code"});assert.equal(wrong.status,401);
+const valid=await call("/api/review-access",{code});assert.equal(valid.status,200);assert.deepEqual(valid.body,{granted:true});records.push({id:"reviewer-code-validation",wrongStatus:401,validStatus:200,passed:true});
+const allowed=await call("/api/config",undefined,code);assert.equal(allowed.body.reviewAccessGranted,true);records.push({id:"reviewer-config-unlocked",passed:true});
+console.log("Anonymous access and authorization checks passed; verifying real services.");
+const intent=await call("/api/intent",{text:"年报营收同比大于5%、参考静态PE不超过30倍、60个日收益年化波动率不超过35%。"},code);assert.equal(intent.status,200,intent.body.error?.code);assert.equal(intent.body.mode,"model");assert.equal(intent.body.questions.length,0);assert.equal(intent.body.unsupported.length,0);
+assert.deepEqual(intent.body.conditions.map(c=>[c.metric,c.op,c.value]).sort(),strategy.conditions.map(c=>[c.metric,c.op,c.value]).sort());records.push({id:"reviewer-real-model",status:200,model:intent.body.model,elapsedMs:intent.elapsedMs,passed:true});
+const screened=await call("/api/screen",{strategy:{...strategy,conditions:intent.body.conditions},mode:"live"},code);assert.equal(screened.status,200,screened.body.error?.code);assert.equal(screened.body.snapshot.mode,"live");assert.equal(screened.body.snapshot.stocks.length,12);records.push({id:"reviewer-real-financial-screen",status:200,elapsedMs:screened.elapsedMs,snapshotId:screened.body.snapshot.id,asOf:screened.body.snapshot.asOf,counts:screened.body.counts,passed:true});
+mkdirSync(new URL("../artifacts/private/",import.meta.url),{recursive:true});
+writeFileSync(new URL("../artifacts/private/reviewer-access-responses.json",import.meta.url),JSON.stringify(raw,null,2));
+writeFileSync(new URL("../artifacts/reviewer-access-verification.json",import.meta.url),JSON.stringify({time:new Date().toISOString(),origin,authentication:"Anonymous HTTP; no Cookie, ChatGPT identity or Sites service credential. Reviewer capability only for authorized calls.",records,limitation:"Point-in-time access verification; upstream network and quota availability can change. Raw financial responses excluded from public source."},null,2)+"\n");
+console.log(`${records.length} reviewer access checks passed. No credential persisted in report.`);

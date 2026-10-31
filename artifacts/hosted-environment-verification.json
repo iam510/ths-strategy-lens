@@ -1,0 +1,35 @@
+{
+  "projectId": "appgprj_6ae4a47fe6f88191b450fc1ceb9a4262",
+  "environmentRevision": 1,
+  "updatedAt": "2026-10-30T16:10:44.460420+00:00",
+  "entries": [
+    {
+      "key": "AI_API_KEY",
+      "isSecret": true,
+      "valueRedacted": true
+    },
+    {
+      "key": "AI_BASE_URL",
+      "isSecret": true,
+      "valueRedacted": true
+    },
+    {
+      "key": "AI_MODEL",
+      "isSecret": true,
+      "valueRedacted": true
+    },
+    {
+      "key": "FUYAO_API_KEY",
+      "isSecret": true,
+      "valueRedacted": true
+    }
+  ],
+  "access": {
+    "mode": "custom",
+    "revision": 1,
+    "viewerCount": 1,
+    "groupCount": 0
+  },
+  "authorization": "User explicitly authorized these local credentials only for this private Site.",
+  "valuesIncluded": false
+}

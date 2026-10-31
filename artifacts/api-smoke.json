@@ -1,0 +1,64 @@
+{
+  "time": "2026-10-30T14:42:02.578Z",
+  "origin": "http://127.0.0.1:5186",
+  "config": {
+    "dataConfigured": false,
+    "aiConfigured": false,
+    "statusMeaning": "仅表示环境变量齐全，实际调用需分别验证",
+    "liveScopeLimit": 12
+  },
+  "records": [
+    {
+      "name": "Configuration is visible without secret values",
+      "httpStatus": 200,
+      "passed": true
+    },
+    {
+      "name": "Explicit demo returns 2 pass, 4 fail, 2 unknown",
+      "httpStatus": 200,
+      "passed": true,
+      "counts": {
+        "pass": 2,
+        "fail": 4,
+        "unknown": 2
+      }
+    },
+    {
+      "name": "Conflicting conditions fail before data access",
+      "httpStatus": 422,
+      "passed": true,
+      "error": {
+        "code": "CONFLICT",
+        "message": "年报营收同比的上下限没有交集，请修改条件。"
+      }
+    },
+    {
+      "name": "Guaranteed-return intent is blocked",
+      "httpStatus": 422,
+      "passed": true,
+      "error": {
+        "code": "BOUNDARY",
+        "message": "本产品支持条件研究，不提供保证收益、直接买卖或绕过规则的回答。请改写为可检查的筛选条件。"
+      }
+    },
+    {
+      "name": "Missing data credentials never fall back to demo",
+      "httpStatus": 503,
+      "passed": true,
+      "error": {
+        "code": "DATA_UNCONFIGURED",
+        "message": "尚未配置扶摇数据密钥。请配置服务端环境变量后重试；本次未使用构造数据替代。"
+      }
+    },
+    {
+      "name": "Missing model configuration is explicit",
+      "httpStatus": 503,
+      "passed": true,
+      "error": {
+        "code": "AI_UNCONFIGURED",
+        "message": "尚未配置模型服务。可手动编辑条件，或选择明确标识的预设体验；不会将预设规则当作 AI 解析。"
+      }
+    }
+  ],
+  "limitation": "Demo and failure-path checks only. No authenticated financial data or live model generation verified."
+}

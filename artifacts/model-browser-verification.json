@@ -1,0 +1,32 @@
+{
+  "time": "2026-10-30T16:03:34.088567+00:00",
+  "scope": "local browser on 127.0.0.1:5186",
+  "model": "MiniMax-M3.1-Flash",
+  "input": "经营改善、估值合理、走势稳健。请给出需要我确认的定义和阈值。",
+  "clarifications": 3,
+  "unsupported": 0,
+  "confirmedThenEditedConditions": {
+    "revenue_yoy": "gt 5",
+    "pe_static": "lte 30",
+    "volatility_60": "lte 35"
+  },
+  "snapshotId": "live-6661183b-820d-4e35-802b-33c36fab2214",
+  "asOf": "2026-10-30",
+  "baselineCounts": {
+    "pass": 6,
+    "fail": 6,
+    "unknown": 0
+  },
+  "changedCondition": {
+    "pe_static": "lte 15"
+  },
+  "changedCounts": {
+    "pass": 3,
+    "fail": 9,
+    "unknown": 0
+  },
+  "changedStockCount": 3,
+  "sameSnapshotVerified": true,
+  "screenshots": "Excluded artifacts/private/model-live-workbench.jpg and model-live-comparison.jpg",
+  "limitation": "Browser smoke scenario only; hosted real services not verified."
+}

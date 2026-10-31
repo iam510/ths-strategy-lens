@@ -1,0 +1,42 @@
+{
+  "verifiedAt": "2026-10-30T15:12:34.113Z",
+  "authentication": "Local .env.local; credential never printed or copied",
+  "records": [
+    {
+      "endpoint": "a-share/prices/snapshot",
+      "http": 200,
+      "code": 0,
+      "requestId": "0bcee85b5bf34aacafd9ad70e36a4b12",
+      "rows": 1
+    },
+    {
+      "endpoint": "a-share-index/constituents/ths-stock-list",
+      "http": 200,
+      "code": 0,
+      "requestId": "47aa90ada7b84321bf1cdeefcbe5545d",
+      "rows": 300
+    },
+    {
+      "endpoint": "a-share/calendar/trading-days",
+      "http": 200,
+      "code": 0,
+      "requestId": "9afbf7e732464e0f87c4573e621ebe1d",
+      "rows": 243
+    },
+    {
+      "endpoint": "a-share/financials/income-statements",
+      "http": 200,
+      "code": 0,
+      "requestId": "d0e74b69ae8e46c0ac85b05ebe772e19",
+      "rows": 3
+    },
+    {
+      "endpoint": "a-share/prices/historical",
+      "http": 200,
+      "code": 0,
+      "requestId": "c243fbdab42a4da78e7d9cb726d24762",
+      "rows": 101
+    }
+  ],
+  "scope": "Authenticated field/transport check for five capabilities. Not model or hosted integration. No financial raw rows retained in this report."
+}

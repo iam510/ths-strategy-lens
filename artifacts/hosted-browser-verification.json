@@ -1,0 +1,73 @@
+{
+  "time": "2026-10-30T16:44:22.166787+00:00",
+  "origin": "https://strategy-lens-ths-510.green-trout-2026.chatgpt.site",
+  "authentication": "Owner completed normal ChatGPT login; browser UI, no injected service credential",
+  "testedInitialVersion": "appgprj_6ae4a47fe6f88191b450fc1ceb9a4262~appgver_b47c8c04f2708191908b1dc22c771e8a",
+  "baselineSnapshotId": "live-5a2ea351-70f4-4787-9612-d332053dfb62",
+  "asOf": "2026-10-30",
+  "clarifications": 3,
+  "baselineConditions": {
+    "revenue_yoy": "gt 5",
+    "pe_static": "lte 30",
+    "volatility_60": "lte 35"
+  },
+  "baselineCounts": {
+    "pass": 6,
+    "fail": 6,
+    "unknown": 0
+  },
+  "comparison": {
+    "sameSnapshot": true,
+    "peLimit": 15,
+    "counts": {
+      "pass": 3,
+      "fail": 9,
+      "unknown": 0
+    },
+    "changedCount": 3
+  },
+  "evidence": {
+    "rawFieldsExpanded": true,
+    "sourceTimeUnitFormulaRequestIdsVisible": true,
+    "nonpositiveEPSNotPassed": true
+  },
+  "saveReload": {
+    "name": "线上真实链路验收 2026-10-31",
+    "persisted": true,
+    "conditionsRestored": true,
+    "confirmationReset": true,
+    "mode": "live"
+  },
+  "rerunBeforeRepair": {
+    "browserFailures": 2,
+    "code": "DATA_NETWORK",
+    "workerWallTimeMs": [
+      10000,
+      10001
+    ],
+    "normalSnapshotProduced": false
+  },
+  "repair": {
+    "deploymentId": "appgdep_6ae4c82d30ec81919134ec21b8de2017",
+    "sourceCommit": "6c121cad224ad5adae55f39ac5d0368f5161fad2",
+    "prerequisiteTransportAttempts": 2,
+    "timeoutPerAttemptMs": 20000,
+    "backoffMs": 750,
+    "rerunStatus": "passed",
+    "snapshotId": "live-471932cf-cf4f-46e6-9690-63b5a902c284",
+    "counts": {
+      "pass": 3,
+      "fail": 9,
+      "unknown": 0
+    },
+    "workerHttpStatus": 200,
+    "workerWallTimeMs": 30124,
+    "workerRequestId": "34e7298c471cac4b74883f41cc09e403"
+  },
+  "screenshots": "Excluded artifacts/private/hosted-browser-*.jpg",
+  "limitations": [
+    "Private owner-only access; recruiting reviewer access unresolved",
+    "Intermittent upstream connectivity; retry does not establish root cause or guaranteed availability"
+  ],
+  "status": "Browser workflow completed; intermittent connectivity remains a known risk"
+}

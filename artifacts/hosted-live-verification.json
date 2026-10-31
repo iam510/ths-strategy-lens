@@ -1,0 +1,48 @@
+{
+  "time": "2026-10-30T16:14:30.163Z",
+  "deploymentId": "appgdep_6ae4c191fd608191a43d954be582fedb",
+  "versionId": "appgprj_6ae4a47fe6f88191b450fc1ceb9a4262~appgver_f4e8df3f0ad481919f091418ef5243c8",
+  "environmentRevision": 1,
+  "origin": "https://strategy-lens-ths-510.green-trout-2026.chatgpt.site",
+  "authentication": "Official Sites service credential via stdin; not a browser visitor login",
+  "records": [
+    {
+      "id": "runtime-configuration",
+      "status": 200,
+      "passed": true,
+      "dataConfigured": true,
+      "aiConfigured": true
+    },
+    {
+      "id": "hosted-real-model-explicit",
+      "status": 200,
+      "passed": true,
+      "elapsedMs": 5725,
+      "model": "MiniMax-M3.1-Flash",
+      "promptVersion": "intent-v1.2"
+    },
+    {
+      "id": "hosted-real-model-clarification",
+      "status": 200,
+      "passed": true,
+      "elapsedMs": 8841,
+      "questionCount": 3,
+      "unsupportedCount": 0
+    },
+    {
+      "id": "hosted-model-to-real-financial-data",
+      "status": 200,
+      "passed": true,
+      "elapsedMs": 25769,
+      "snapshotId": "live-44e2df19-2de7-41f5-a925-b33a8171b98c",
+      "asOf": "2026-10-30",
+      "evaluated": 12,
+      "counts": {
+        "pass": 6,
+        "fail": 6,
+        "unknown": 0
+      }
+    }
+  ],
+  "limitation": "Hosted HTTP integration only. Browser visitor flow and recruiting-reviewer access are separate. Raw market/model responses remain in excluded private artifacts."
+}
