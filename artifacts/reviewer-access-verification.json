@@ -1,0 +1,59 @@
+{
+  "time": "2026-10-31T02:51:31.080Z",
+  "origin": "https://strategy-lens-ths-510.green-trout-2026.chatgpt.site",
+  "authentication": "Anonymous HTTP; no Cookie, ChatGPT identity or Sites service credential. Reviewer capability only for authorized calls.",
+  "records": [
+    {
+      "id": "anonymous-page",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "anonymous-config-locked",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "anonymous-paid-routes-blocked",
+      "intentStatus": 401,
+      "screenStatus": 401,
+      "passed": true
+    },
+    {
+      "id": "anonymous-explicit-demo",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "id": "reviewer-code-validation",
+      "wrongStatus": 401,
+      "validStatus": 200,
+      "passed": true
+    },
+    {
+      "id": "reviewer-config-unlocked",
+      "passed": true
+    },
+    {
+      "id": "reviewer-real-model",
+      "status": 200,
+      "model": "MiniMax-M3.1-Flash",
+      "elapsedMs": 3461,
+      "passed": true
+    },
+    {
+      "id": "reviewer-real-financial-screen",
+      "status": 200,
+      "elapsedMs": 22024,
+      "snapshotId": "live-e9d6d596-5e8b-4abc-9973-2ac7ba1db410",
+      "asOf": "2026-10-30",
+      "counts": {
+        "pass": 6,
+        "fail": 6,
+        "unknown": 0
+      },
+      "passed": true
+    }
+  ],
+  "limitation": "Point-in-time access verification; upstream network and quota availability can change. Raw financial responses excluded from public source."
+}
